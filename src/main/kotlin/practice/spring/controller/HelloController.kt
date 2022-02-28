@@ -25,11 +25,11 @@ class HelloController {
 
     @GetMapping("hello-string")
     @ResponseBody
-    fun helloString(@RequestParam("name") name: String): String = "hello $name"
+    fun helloString(@RequestParam("name") name: String) = "hello $name"
 
     @GetMapping("hello-api")
     @ResponseBody
-    fun helloApi(@RequestParam("name") name: String): Hello = Hello(name)
+    fun helloApi(@RequestParam("name") name: String) = Hello(name)
 
-    class Hello(var name: String)
+    class Hello(private var name: String)
 }
