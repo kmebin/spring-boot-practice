@@ -23,6 +23,10 @@ class MemoryMemberRepository : MemberRepository {
         return ArrayList(store.values)
     }
 
+    fun clear() {
+        store.clear()
+    }
+
     companion object {
         private val store: MutableMap<Long, Member> = HashMap()
         private var sequence = 0L
